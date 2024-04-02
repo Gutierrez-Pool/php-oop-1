@@ -14,8 +14,22 @@ class Movie {
     }
 
 }
-    $movie = new Movie("Super Mario Bros", "Animazione", "2023", "92 min.");
-    var_dump($movie);
+    $movie1 = new Movie("Super Mario Bros", "Animazione", "2023", "92 min.");
+    // var_dump($movie1);
+
+    $movie2 = new Movie("Oppenheimer", "Suspense", "2023", "180 min.");
+    // var_dump($movie2);
+
+    $movie3 = new Movie("1922", "Terrore", "2017", "101 min.");
+    // var_dump($movie3);
+
+    $movies = [
+        $movie1,
+        $movie2,
+        $movie3,
+    ];
+    // var_dump($movies);
+
 ?>
 
 <!DOCTYPE html>
@@ -28,6 +42,15 @@ class Movie {
 <body>
 
     <h1>Movies</h1>
-    
+    <ul>
+        <?php 
+            foreach ($movies as $movie) {
+                echo "
+                <li>
+                    ". $movie->titolo ." <br> ". $movie->genero ." <br> ". $movie->anno ." <br> ". $movie->durata ."
+                </li> <br> ";
+            }
+        ?>
+    </ul>
 </body>
 </html>
